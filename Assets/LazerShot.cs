@@ -28,8 +28,8 @@ public class LazerShot : MonoBehaviour {
     {
         while (shooting == true)
         {
-            Instantiate(lazer, transform.GetChild(0).transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(5);
+            Instantiate(lazer, transform.position, transform.rotation * Quaternion.Euler(0,0,-90));
+            yield return new WaitForSeconds(0.75f);
         }
 
     }

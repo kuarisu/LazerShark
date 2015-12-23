@@ -42,4 +42,13 @@ public class Move_Shark_Two : MonoBehaviour {
         yield return new WaitForSeconds(coolDown);
         moveOKright = true;
     }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "DeathZone")
+        {
+            Destroy(gameObject);
+            Debug.Log("You died player 2");
+        }
+    }
 }
