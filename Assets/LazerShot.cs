@@ -28,7 +28,7 @@ public class LazerShot : MonoBehaviour {
     {
         while (shooting == true)
         {
-            Instantiate(lazer, transform.position, transform.rotation * Quaternion.Euler(0,0,-90));
+            Instantiate(lazer, transform.position + transform.up, transform.rotation * Quaternion.Euler(0,0,-90));
             yield return new WaitForSeconds(0.75f);
         }
 

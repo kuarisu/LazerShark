@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Goal.cs" />
     <Compile Include="Assets\LazerMovement.cs" />
     <Compile Include="Assets\LazerShot.cs" />
     <Compile Include="Assets\Move_Shark_One.cs" />

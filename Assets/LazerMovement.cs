@@ -13,14 +13,5 @@ public class LazerMovement : MonoBehaviour {
         transform.localPosition = transform.localPosition - transform.right * 0.2f;
     }
 
-    void OnCollisionEnter (Collision col)
-    {
-        if (col.gameObject.tag == "Goal")
-        {
-            Destroy(col.gameObject);
-            Debug.Log("GOAL!");
-        }
-
-    }
 
 }

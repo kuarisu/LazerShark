@@ -44,6 +44,8 @@ public class Move_Shark_One : MonoBehaviour {
         moveOKright = true;
     }
 
+
+    //Triger avec la Zone Mortel (mort) et avec le laser (immobilisation)
     void OnTriggerEnter (Collider col)
     {
         if (col.gameObject.tag == "DeathZone")
@@ -51,5 +53,19 @@ public class Move_Shark_One : MonoBehaviour {
             Destroy(gameObject);
             Debug.Log("You died player 1");
         }
+
+        if (col.gameObject.tag == "laser")
+        {
+            Debug.Log("je touche je touche !");
+            Destroy(col.gameObject);
+            StartCoroutine(Immobilisation());
+        }
+    }
+
+    IEnumerator Immobilisation()
+    {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        yield return new WaitForSeconds(2);
     }
 }

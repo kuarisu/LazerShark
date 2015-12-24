@@ -50,5 +50,19 @@ public class Move_Shark_Two : MonoBehaviour {
             Destroy(gameObject);
             Debug.Log("You died player 2");
         }
+
+        if (col.gameObject.tag == "laser")
+        {
+            Debug.Log("je touche je touche !");
+            StartCoroutine(Immobilisation());
+        }
+    }
+
+    IEnumerator Immobilisation()
+    {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        yield return new WaitForSeconds(2);
+
     }
 }
