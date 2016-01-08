@@ -10,7 +10,7 @@ public class LazerMovement : MonoBehaviour {
 	
     void Update ()
     {
-        transform.localPosition = transform.localPosition - transform.right * 0.2f;
+        transform.localPosition = transform.localPosition - transform.right * 0.3f;
     }
 
 
